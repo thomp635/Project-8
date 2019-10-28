@@ -1,0 +1,38 @@
+# Project 8 Solutions
+
+# Student Name: Annie Thompson
+
+# Peer Collaborators (if any) and nature of the collaboration ........
+# TA help sought (if any) Dr. Ward
+# Online resources used (if any) and weblink for location of resources ........
+
+# 1a. (2 pt)
+# Comment about method of solution: I am using pipelines to cut and sort the data.
+Solution itself cat /class/datamine/data/8451/The_Complete_Journey_2_Master/5000_transactions.csv | cut -d, -f7 | sort | uniq -c | sort -n (no hashtag needed; this should be raw UNIX code on this line)
+# Output from the solution    1 STORE_R
+			2221500 SOUTH
+			2463343 CENTRAL
+			2677350 WEST
+			3263360 EAST
+
+# 1b. (2 pt)
+# Comment about method of solution: I am using pipelines to find the four cities. In order to find them, I use the sort, uniq, and cut commands.
+Solution itself cat /home/thomp635/stat-computing.org/dataexpo/2009/airports.csv | sort | uniq -c | cut -d, -f3-4
+(no hashtag needed; this should be raw UNIX code on this line)
+# Output from the solution: Indianapolis IN, Miami FL, New York NY, and Houston TX.
+
+# 2a. (2 pts)
+# Comment about method of solution: I am using pipelines to find pickup location ID. In order to find them, I use sort, uniq, and cut commands.
+Solution itself cat /class/datamine/data/taxi/yellow/yellow_tripdata_2019-06.csv | sort | uniq -c | cut -d, -f8 (no hashtag needed; this should be raw UNIX code on this line)
+# Output from the solution Queens, New York
+
+# 2b. (2 pts) 
+# Comment about method of solution: I am using pipelines to find the largest donations of 2020 elections. In order to find them, I use sort, uniq, and cut commands.
+Solution itself cat /class/datamine/data/election/incont2020.txt | sort | uniq -c | cut -d, -f9-10 (no hashtag needed; this should be raw UNIX code on this line)
+# Output from the solution New York, New York
+
+# 3a. (2 pt)
+# Comment about method of solution: I am comparing my results in pipelines of bash vs R
+Solution itself tail(sort(table(myDF$location)),5) tail(sort(table(data$LocationID)) ,1) tail(sort(table(myDF$location)),6) (no hashtag needed; this should be at least 4 lines of raw R code)
+# It took about 7 minutes. 
+
